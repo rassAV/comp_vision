@@ -18,8 +18,8 @@ plusses = label(binary_opening(image, s_plus))
 crosses = label(binary_opening(image, s_cross))
 
 
-counts_pl = list(set(plusses.flatten()))[-1] + 1
-counts_cr = list(set(crosses.flatten()))[-1] + 1
+counts_pl = list(set(plusses.flatten()))[-1]
+counts_cr = list(set(crosses.flatten()))[-1]
 print("Кол-во плюсов", counts_pl)
 print("Кол-во крестов", counts_cr)
 print("Кол-во звёздочек", counts_pl + counts_cr)
