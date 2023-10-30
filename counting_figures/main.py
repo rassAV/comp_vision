@@ -23,6 +23,8 @@ for i, r in enumerate(rects):
     res = label(binary_opening(image, r))
     counts = list(set(res.flatten()))[-1]
     summR += counts
+    if i == 0:
+        err = counts
     print("Кол-во прямоугольников("+str(i)+"):", counts)
 print("Общее кол-во прямоугольников:", summR, "\n")
 
@@ -32,6 +34,8 @@ summBR = 0
 for i, b_r in enumerate(bitten_rects):
     res = label(binary_opening(image, b_r))
     counts = list(set(res.flatten()))[-1]
+    if i < 2:
+        counts -= err
     summBR += counts
     print("Кол-во откусанных прямоугольников("+str(i)+"):", counts)
 print("Общее кол-во откусанных прямоугольников:", summBR)
