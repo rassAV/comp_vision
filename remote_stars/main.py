@@ -11,10 +11,6 @@ def recvall(sock, n):
         data.extend(packet)
     return data
 
-def centroid(labeled, label=1):
-    pos = np.where(labeled == label)
-    return pos[0].mean(), pos[1].mean()
-
 def neighbours(img, i, j):
     return [img[i + 1, j], img[i - 1, j], img[i, j - 1], img[i, j + 1]]
 
